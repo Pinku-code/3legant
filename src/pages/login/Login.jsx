@@ -1,3 +1,11 @@
+/**
+ * Login component
+ *
+ * Handles user login functionality
+ *
+ * @returns {JSX.Element} Login form component
+ */
+
 import "./Login.scss";
 
 import { IoEye, IoEyeOff } from "react-icons/io5";
@@ -9,20 +17,48 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import useGetValue from "../../hooks/useGetValue";
 import { useNavigate } from "react-router-dom";
-
+/**
+ * Initial state for the login form
+ *
+ * @type {{ name: string, password: string }}
+ */
 const initialState = {
   name: "Abinash",
   password: "123456789",
 };
-
+/**
+ * Login component
+ *
+ * @returns {JSX.Element} Login form component
+ */
 const Login = () => {
+  /**
+   * Scroll to top of the page on mount
+   */
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+  /**
+   * Get the user input values and handle changes
+   */
   const { user, setUser, handleChange } = useGetValue(initialState);
+  /**
+   * Dispatch the setToken action to store the token in the Redux store
+   */
   const dispatch = useDispatch();
+  /**
+   * Navigate to the admin create product page after successful login
+   */
   const navigate = useNavigate();
+  /**
+   * Toggle password visibility
+   */
   const [eye, setEye] = useState(false);
+  /**
+   * Handle login form submission
+   *
+   * @param {React.FormEvent<HTMLFormElement>} e
+   */
   const handleLogin = (e) => {
     e.preventDefault();
     if (user.name === "Abinash" && user.password === "123456789") {

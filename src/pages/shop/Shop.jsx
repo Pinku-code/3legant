@@ -1,3 +1,11 @@
+/**
+ * Shop component
+ * 
+ * This component renders a shop page with a list of products, pagination, and a newsletter section.
+ * 
+ * @returns {JSX.Element} The shop page component
+ */
+
 import "./Shop.scss";
 
 import {
@@ -19,20 +27,41 @@ import { toggleHeart } from "../../context/slices/wishlistSlices";
 import { useGetProductsQuery } from "../../context/api/productApi";
 
 const Shop = () => {
+  /**
+   * State variables
+   */
   const [page, setPage] = useState(1);
   const { data: length } = useGetProductsQuery();
   const { data } = useGetProductsQuery({ page, limit: 8 });
   const pageLength = Math.ceil(length?.length / 10);
+  /**
+   * Effects
+   */
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+  /**
+   * Dispatch and selector hooks
+   */
   const dispatch = useDispatch();
   const wishlistData = useSelector((state) => state.wishlist.value);
   const cartData = useSelector((state) => state.cart.value);
+
+  /**
+   * Handle pagination change
+   * 
+   * @param {object} event - Pagination change event
+   * @param {number} value - New page number
+   */
   console.log(data);
   const handleChange = (event, value) => {
     setPage(value);
   };
+  /**
+   * Get rating stars
+   * 
+   * @returns {JSX.Element[]} An array of rating stars
+   */
   const getRating = () => {
     let res = [];
     for (let i = 0; i < Math.trunc(wishlistData?.el?.rating); i++) {

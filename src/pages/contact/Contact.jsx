@@ -1,3 +1,12 @@
+/**
+ * Contact component for 3legant website
+ * 
+ * This component renders the contact page with a hero section, about us section, 
+ * contact us section, and a form to send messages to the Telegram bot.
+ * 
+ * @returns {JSX.Element} The Contact component
+ */
+
 import "./Contact.scss";
 
 import React, { Fragment, useEffect, useState } from "react";
@@ -11,14 +20,29 @@ import { FaArrowRight } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
 const Contact = () => {
+  /**
+   * useEffect hook to scroll to the top of the page on mount
+   */
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+  /**
+   * Telegram bot token and chat ID
+   */
   const BOT__TOKEN = "7468900185:AAH4z9uHj3Y9MTsaz2KcYlGW19zpWZK0llo";
   const CHAT__ID = "6366315724";
+
+  /**
+   * State variables for form fields
+   */
   const [fname, setFname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  /**
+   * Handle send message event
+   * 
+   * @param {Event} e The event object
+   */
   const handleSendMessage = (e) => {
     e.preventDefault();
     let text = "User: %0A%0A";

@@ -1,3 +1,37 @@
+/**
+ * About component
+ *
+ * This component renders the About page, displaying a list of cards with images, titles, and descriptions.
+ *
+ * @returns {React.ReactElement} The About component
+ *
+ * @example
+ * import React from 'react';
+ * import About from './About';
+ *
+ * const HomeAboutData = [
+ *   {
+ *     id: 1,
+ *     img: 'image1.jpg',
+ *     title: 'Card 1 Title',
+ *     desc: 'Card 1 Description'
+ *   },
+ *   {
+ *     id: 2,
+ *     img: 'image2.jpg',
+ *     title: 'Card 2 Title',
+ *     desc: 'Card 2 Description'
+ *   }
+ * ];
+ *
+ * const App = () => {
+ *   return (
+ *     <About />
+ *   );
+ * };
+ */
+
+
 import "./About.scss";
 
 import React, { Fragment, useEffect } from "react";

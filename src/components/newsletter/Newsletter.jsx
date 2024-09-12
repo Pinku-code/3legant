@@ -1,3 +1,25 @@
+/**
+ * Newsletter component
+ *
+ * A React component that renders a newsletter signup form.
+ *
+ * @returns {React.ReactElement} The newsletter component
+ *
+ * @example
+ * ```
+ * import React from 'react';
+ * import Newsletter from './Newsletter';
+ *
+ * const App = () => {
+ *   return (
+ *     <div>
+ *       <Newsletter />
+ *     </div>
+ *   );
+ * };
+ * ```
+ */
+
 import "./Newsletter.scss";
 
 import React, { Fragment } from "react";
@@ -5,6 +27,11 @@ import React, { Fragment } from "react";
 import { MdOutlineMail } from "react-icons/md";
 
 const Newsletter = () => {
+  /**
+ * Newsletter component
+ *
+ * @returns {React.ReactElement} The newsletter component
+ */
   return (
     <Fragment>
       <div className="newsletter container__max">

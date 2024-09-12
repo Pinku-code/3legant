@@ -1,8 +1,24 @@
+/**
+ * CountdownTimer component
+ *
+ * Displays a countdown timer until a specified date and time.
+ *
+ * @example
+ * <CountdownTimer />
+ *
+ * @returns {React.ReactElement} A React element representing the countdown timer.
+ */
+
 import "./CountdownTimer.scss";
 
 import React, { useEffect, useState } from "react";
 
 const CountdownTimer = () => {
+   /**
+   * Calculates the time left until the specified date and time.
+   *
+   * @returns {Object} An object with properties for days, hours, minutes, and seconds left.
+   */
   const calculateTimeLeft = () => {
     const difference = +new Date("2024-07-30T12:00:00") - +new Date();
     let timeLeft = {};
@@ -18,7 +34,12 @@ const CountdownTimer = () => {
 
     return timeLeft;
   };
-
+  /**
+   * Formats a time value to display with leading zeros if necessary.
+   *
+   * @param {number} time The time value to format.
+   * @returns {string} The formatted time value.
+   */
   const formatTime = (time) => {
     return time < 10 ? `0${time}` : time;
   };
@@ -57,6 +78,14 @@ const CountdownTimer = () => {
     </div>
   );
 };
+
+/**
+ * App component
+ *
+ * The top-level component for the application.
+ *
+ * @returns {React.ReactElement} A React element representing the application.
+ */
 
 function App() {
   return (

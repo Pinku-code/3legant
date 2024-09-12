@@ -1,13 +1,36 @@
+/**
+ * Auth slice for managing user authentication state and token.
+ *
+ * @module authSlice
+ */
+
 import { createSlice } from "@reduxjs/toolkit";
 import { useNavigate } from "react-router-dom";
-
+/**
+ * Initial state for the auth slice.
+ *
+ * @typedef {Object} initialState
+ * @property {string|null} token - The authentication token.
+ * @property {Object|null} user - The user data.
+ */
 const initialState = {
   token: localStorage.getItem("x-auth-token"),
   user: localStorage.getItem("user-data"),
 };
+/**
+ * Auth slice for managing user authentication state and token.
+ *
+ * @function authSlice
+ * @returns {Object} The auth slice.
+ */
 const authSlice = createSlice({
   name: "auth",
   initialState,
+  /**
+   * Reducers for the auth slice.
+   *
+   * @typedef {Object} reducers
+   */
   reducers: {
     setToken: (state, action) => {
       state.token = action.payload;
@@ -25,6 +48,10 @@ const authSlice = createSlice({
     },
   },
 });
-
+/**
+ * Exported actions for the auth slice.
+ *
+ * @typedef {Object} actions
+ */
 export const { logout, setToken, setUser } = authSlice.actions;
 export default authSlice.reducer;

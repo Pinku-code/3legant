@@ -1,7 +1,25 @@
 import { api } from "./index";
-
+/**
+ * Product API endpoints
+ *
+ * This API provides endpoints for managing products.
+ */
 export const productApi = api.injectEndpoints({
+  /**
+   * Endpoints
+   */
   endpoints: (build) => ({
+    /**
+     * Get all products
+     *
+     * @param {Object} params - Query parameters
+     * @returns {Promise} - Promise resolving to an array of products
+     *
+     * Example:
+     * ```
+     * const { data, error, isLoading } = useGetProductsQuery({ limit: 10 });
+     * ```
+     */
     getProducts: build.query({
       query: (params) => ({
         url: "/products",
@@ -9,6 +27,17 @@ export const productApi = api.injectEndpoints({
       }),
       providesTags: ["Product"],
     }),
+     /**
+     * Get a product by ID
+     *
+     * @param {number} id - Product ID
+     * @returns {Promise} - Promise resolving to a product object
+     *
+     * Example:
+     * ```
+     * const { data, error, isLoading } = useGetProductByIdQuery(1);
+     * ```
+     */
     getProductById: build.query({
       query: (id) => ({
         url: `/products/${id}`,

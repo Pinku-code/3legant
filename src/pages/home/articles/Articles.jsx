@@ -1,3 +1,16 @@
+/**
+ * Articles component
+ *
+ * This component displays a list of articles with images, titles, and links to read more.
+ *
+ * @returns {React.ReactElement} The Articles component
+ *
+ * Example:
+ * ```
+ * <Articles />
+ * ```
+ */
+
 import "./Articles.scss";
 
 import React, { Fragment, useEffect } from "react";
@@ -8,7 +21,19 @@ import ArtImg2 from "../../../assets/home/art2.png";
 import ArtImg3 from "../../../assets/home/art3.png";
 import { FaArrowRight } from "react-icons/fa6";
 
+
+/**
+ * Articles function component
+ *
+ * @description This component is responsible for rendering the articles section
+ * @returns {React.ReactElement} The Articles component
+ */
 const Articles = () => {
+  
+
+  /**
+   * Scroll to top of the page when the component mounts
+   */
   useEffect(() => {
     window.scroll(0, 0);
   }, []);

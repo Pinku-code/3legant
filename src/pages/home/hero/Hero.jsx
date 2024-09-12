@@ -1,3 +1,23 @@
+/**
+ * Hero component that displays a slideshow of hero images using Swiper.
+ *
+ * @example
+ * ```jsx
+ * import React from 'react';
+ * import Hero from './Hero';
+ *
+ * const App = () => {
+ *   return (
+ *     <div>
+ *       <Hero />
+ *     </div>
+ *   );
+ * };
+ * ```
+ *
+ * @returns {React.ReactElement} A React element representing the Hero component.
+ */
+
 import "./Hero.scss";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,7 +28,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Fragment } from "react";
 import HeroImg from "../../../assets/home/hero.png";
-
+/**
+ * Hero component that displays a slideshow of hero images.
+ */
 const Hero = () => {
   return (
     <Fragment>

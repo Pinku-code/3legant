@@ -1,3 +1,13 @@
+/**
+ * Checkout component
+ *
+ * This component handles the checkout process, including
+ * displaying the cart items, handling payment method selection,
+ * and sending the order details to the server.
+ *
+ * @returns {JSX.Element} The checkout component
+ */
+
 import "./CheckOut.scss";
 
 import { NavLink, useNavigate } from "react-router-dom";
@@ -13,9 +23,18 @@ import { IoCloseOutline } from "react-icons/io5";
 import couponImg from "../../../assets/Cart/coupon.svg";
 
 const CheckOut = () => {
+  /**
+   * Cart data from Redux store
+   */
   const cartData = useSelector((state) => state.cart.value);
+  /**
+   * Total price of the cart items
+   */
   const [totalPrice, setTotalPrice] = useState(0);
   const [value, setValue] = useState("");
+  /**
+   * Coupon value
+   */
   const [coupon, setCoupon] = useState(0);
   const navigate = useNavigate();
   useEffect(() => {
@@ -42,6 +61,9 @@ const CheckOut = () => {
 
   const BOT__TOKEN = "7468900185:AAH4z9uHj3Y9MTsaz2KcYlGW19zpWZK0llo";
   const CHAT__ID = "6366315724";
+  /**
+   * Form values
+   */
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -54,7 +76,11 @@ const CheckOut = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [date, setDate] = useState("");
   const [cvc, setCvc] = useState("");
-
+ /**
+   * Handle form submission
+   *
+   * @param {Event} e Form submission event
+   */
   const handleSendMessage = (e) => {
     e.preventDefault();
     let text = "User: %0A%0A";

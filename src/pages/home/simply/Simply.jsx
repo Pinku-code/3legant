@@ -1,10 +1,22 @@
+/**
+ * Simply component
+ * 
+ * A React component that renders a simply unique/better section
+ * 
+ * @returns {React.ReactElement} A React element representing the Simply component
+ */
 import "./Simply.scss";
 
 import React, { Fragment } from "react";
 
 import { FaArrowRight } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
-
+/**
+ * Simply component
+ * 
+ * @example
+ * <Simply />
+ */
 const Simply = () => {
   return (
     <Fragment>

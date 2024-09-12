@@ -1,3 +1,16 @@
+/**
+ * Sale component
+ *
+ * This component displays a sale banner with an image, description, and a call-to-action button.
+ *
+ * @returns {React.ReactElement} The Sale component
+ *
+ * Example:
+ * ```
+ * <Sale />
+ * ```
+ */
+
 import "./Sale.scss";
 
 import React, { Fragment } from "react";
@@ -5,7 +18,12 @@ import { NavLink } from "react-router-dom";
 
 import { FaArrowRight } from "react-icons/fa6";
 import SaleImg from "../../../assets/home/sale.png";
-
+/**
+ * Sale component
+ *
+ * @function Sale
+ * @returns {React.ReactElement} The Sale component
+ */
 const Sale = () => {
   return (
     <Fragment>

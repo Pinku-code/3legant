@@ -1,3 +1,11 @@
+/**
+ * AdminSidebar component
+ *
+ * A React component that renders the admin sidebar with navigation links and a logout button.
+ *
+ * @returns {React.ReactElement} The admin sidebar component
+ */
+
 import "./AdminSidebar.scss";
 
 import { NavLink, useNavigate } from "react-router-dom";
@@ -11,8 +19,19 @@ import manageImg from "../../assets/admin/a2.svg";
 import { useDispatch } from "react-redux";
 
 const AdminSidebar = () => {
+  /**
+   * Navigate function from react-router-dom
+   */
   const navigate = useNavigate();
+  /**
+   * Dispatch function from react-redux
+   */
   const dispatch = useDispatch();
+  /**
+   * Handle logout function
+   *
+   * Dispatches the logout action and navigates to the root route
+   */
   const handleLogOut = () => {
     dispatch(logout());
     navigate("/");

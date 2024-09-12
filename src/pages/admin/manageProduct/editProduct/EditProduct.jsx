@@ -1,3 +1,14 @@
+/**
+ * EditProduct component
+ * 
+ * A React component for editing a product.
+ * 
+ * @param {object} editProduct - The product to be edited
+ * @param {function} setEditProduct - A function to set the edited product
+ * 
+ * @returns {JSX.Element} - The EditProduct component
+ */
+
 import "../../createProduct/CreateProduct.scss";
 
 import React, { useEffect } from "react";
@@ -8,9 +19,40 @@ import useGetValue from "../../../../hooks/useGetValue";
 import { useUpdateProductMutation } from "../../../../context/api/productApi";
 
 const EditProduct = ({ editProduct, setEditProduct }) => {
+  /**
+   * useUpdateProductMutation hook
+   * 
+   * A hook for updating a product.
+   * 
+   * @returns {array} - An array containing the updateProduct function and its isLoading and isSuccess states
+   */
   const [updateProduct, { isLoading, isSuccess }] = useUpdateProductMutation();
+  /**
+   * useGetCategoryQuery hook
+   * 
+   * A hook for getting categories.
+   * 
+   * @returns {object} - An object containing the category data
+   */
   const { data } = useGetCategoryQuery();
+  /**
+   * useGetValue hook
+   * 
+   * A hook for getting and updating the product values.
+   * 
+   * @param {object} editProduct - The product to be edited
+   * 
+   * @returns {object} - An object containing the product values and a handleChange function
+   */
   const { user, setUser, handleChange } = useGetValue(editProduct);
+
+  /**
+   * handleUpdate function
+   * 
+   * A function to handle the product update.
+   * 
+   * @param {event} e - The event object
+   */
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -18,6 +60,11 @@ const EditProduct = ({ editProduct, setEditProduct }) => {
     updateProduct({ body: user, id: user.id });
   };
 
+  /**
+   * useEffect hook
+   * 
+   * A hook for handling the update product success.
+   */
   useEffect(() => {
     if (isSuccess) {
       toast.success("Successfully !");

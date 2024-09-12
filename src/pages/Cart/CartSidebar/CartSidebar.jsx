@@ -1,3 +1,17 @@
+/**
+ * CartSidebar component
+ *
+ * This component renders a sidebar with three items: Shopping cart, Checkout detail, and Order complete.
+ * The items are styled based on the current pathname, with completed steps in green, active step in black, and disabled steps in gray.
+ *
+ * @example
+ * ```jsx
+ * <CartSidebar />
+ * ```
+ *
+ * @returns {React.ReactElement} The CartSidebar component
+ */
+
 import "./CartSidebar.scss";
 
 import React, { Fragment } from "react";

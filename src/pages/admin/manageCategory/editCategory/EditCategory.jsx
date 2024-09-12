@@ -4,10 +4,33 @@ import React, { useEffect } from "react";
 
 import { toast } from "react-toastify";
 import { useUpdateCategoryMutation } from "../../../../context/api/categoryApi";
-
+/**
+ * EditCategory component
+ *
+ * A React component for editing a category.
+ *
+ * @param {object} editCategory - The category to be edited
+ * @param {function} setEditCategory - A function to set the edited category
+ *
+ * @returns {ReactElement} The EditCategory component
+ */
 const EditCategory = ({ editCategory, setEditCategory }) => {
+  /**
+   * useUpdateCategoryMutation hook
+   *
+   * A hook to update a category
+   *
+   * @returns {array} An array containing the updateCategory function and its isLoading and isSuccess states
+   */
   const [updateCategory, { isLoading, isSuccess }] =
     useUpdateCategoryMutation();
+    /**
+   * handleEditCategory function
+   *
+   * Handles the edit category form submission
+   *
+   * @param {event} e - The form submission event
+   */
 
   const handleEditCategory = (e) => {
     e.preventDefault();
@@ -16,6 +39,11 @@ const EditCategory = ({ editCategory, setEditCategory }) => {
     updateCategory({ body: category, id: category.id });
   };
 
+  /**
+   * useEffect hook
+   *
+   * Displays a success toast message and resets the edited category when the update is successful
+   */
   useEffect(() => {
     if (isSuccess) {
       toast.success("Updated category successfully!");

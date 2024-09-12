@@ -1,3 +1,12 @@
+/**
+ * ManageCategory component
+ *
+ * This component is used to manage categories. It displays a list of categories
+ * and provides buttons to edit or delete each category.
+ *
+ * @returns {React.ReactElement} The ManageCategory component
+ */
+
 import "./ManageCategory.scss";
 
 import React, { Fragment, useState } from "react";
@@ -14,7 +23,13 @@ import { MdDeleteOutline } from "react-icons/md";
 import Module from "../../../components/Module/Module";
 
 const ManageCategory = () => {
+  /**
+   * Fetches categories data using the `useGetCategoryQuery` hook
+   */
   const { data } = useGetCategoryQuery();
+  /**
+   * State to store the category being edited
+   */
   const [editCategory, setEditCategory] = useState(null);
   const [deleteCategoryById, setDeleteCategoryById] = useState(null);
 

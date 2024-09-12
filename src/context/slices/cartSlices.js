@@ -1,11 +1,31 @@
-import { createSlice } from "@reduxjs/toolkit";
+/**
+ * Cart slice reducer
+ *
+ * Handles cart-related state and actions
+ */
 
+import { createSlice } from "@reduxjs/toolkit";
+/**
+ * Initial state of the cart
+ *
+ * Retrieves cart data from local storage, or initializes an empty array
+ */
 const initialState = {
   value: JSON.parse(localStorage.getItem("cart")) || [],
 };
+/**
+ * Saves cart data to local storage
+ *
+ * @param {array} data - Cart data to be saved
+ */
 const saveCartData = (data) => {
   localStorage.setItem("cart", JSON.stringify(data));
 };
+/**
+ * Cart slice
+ *
+ * Defines the cart reducer and its actions
+ */
 const cartSlice = createSlice({
   name: "cart",
   initialState,

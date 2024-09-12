@@ -1,3 +1,12 @@
+/**
+ * CardItem component
+ *
+ * A React component that displays a product card item with rating, title, price, and add to cart/wishlist functionality.
+ *
+ * @param {object} el - The product data object
+ * @returns {ReactElement} The CardItem component
+ */
+
 import "./CardItem.scss";
 
 import {
@@ -17,9 +26,22 @@ import { addToCart } from "../../context/slices/cartSlices";
 import { toggleHeart } from "../../context/slices/wishlistSlices";
 
 const CardItem = ({ el }) => {
+  /**
+   * useDispatch hook to dispatch actions to the Redux store
+   */
   const dispatch = useDispatch();
+  /**
+   * useSelector hook to select data from the Redux store
+   */
   const wishlistData = useSelector((state) => state.wishlist.value);
   const cartData = useSelector((state) => state.cart.value);
+  /**
+   * getRating function
+   *
+   * Returns an array of rating stars based on the product rating
+   *
+   * @returns {array} An array of rating stars
+   */
   const getRating = () => {
     let res = [];
     for (let i = 0; i < Math.trunc(el?.rating); i++) {

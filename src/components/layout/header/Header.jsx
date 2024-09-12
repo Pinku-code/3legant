@@ -1,3 +1,25 @@
+/**
+ * Header component for the 3legant application.
+ *
+ * This component renders the header section of the application, including the navigation menu, search bar, and cart/wishlist icons.
+ *
+ * @returns {React.ReactElement} The Header component.
+ *
+ * Example:
+ * ```
+ * import React from 'react';
+ * import Header from './Header';
+ *
+ * const App = () => {
+ *   return (
+ *     <div>
+ *       <Header />
+ *     </div>
+ *   );
+ * };
+ * ```
+ */
+
 import "./Header.scss";
 
 import React, { Fragment, useState } from "react";

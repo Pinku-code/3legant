@@ -1,3 +1,12 @@
+/**
+ * Favorites component
+ * 
+ * Displays a list of favorite items with their ratings, prices, and actions to add to cart or toggle heart.
+ * 
+ * @returns {JSX.Element} Favorites component
+ */
+
+
 import "./Favorites.scss";
 
 import {
@@ -17,12 +26,27 @@ import emptyImg from "../../assets/Cart/emptyw.svg";
 import { toggleHeart } from "../../context/slices/wishlistSlices";
 
 const Favorites = () => {
+  /**
+   * Scrolls to the top of the page on mount
+   */
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+
+   /**
+   * Retrieves wishlist data from Redux store
+   */
   let wishlistData = useSelector((state) => state.wishlist.value);
+  /**
+   * Retrieves cart data from Redux store
+   */
   const cartData = useSelector((state) => state.cart.value);
   console.log(wishlistData);
+  /**
+   * Calculates and returns the rating stars for an item
+   * 
+   * @returns {JSX.Element[]} Rating stars
+   */
   const getRating = () => {
     let res = [];
     for (let i = 0; i < Math.trunc(wishlistData?.el?.rating); i++) {
@@ -43,6 +67,10 @@ const Favorites = () => {
 
     return res;
   };
+
+  /**
+   * Dispatches actions to Redux store
+   */
   const dispatch = useDispatch();
   return (
     <Fragment>

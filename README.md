@@ -59,3 +59,11 @@ Development Server :  http://localhost:5173/
 - Implement order management.
 - Add product search and filtering functionality.
 - Implement persistent cart storage across sessions.
+
+```js
+const Developer = {
+    "NAME" : "ABINASH",
+    "GMAIL" : "ns4507262@gmail.com",
+    "MOBILE" : "+91-637205288"
+}
+```

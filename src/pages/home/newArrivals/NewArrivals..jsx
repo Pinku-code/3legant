@@ -1,3 +1,18 @@
+/**
+ * NewArrivals component
+ * 
+ * This component displays a list of new arrivals products.
+ * It fetches the products data from the API using `useGetProductsQuery` hook
+ * and renders a list of `CardItem` components.
+ * 
+ * @example
+ * ```
+ * <NewArrivals />
+ * ```
+ * 
+ * @returns {React.ReactElement} The NewArrivals component
+ */
+
 import "./NewArrivals.scss";
 
 import React, { Fragment } from "react";
@@ -7,7 +22,12 @@ import { FaArrowRight } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import ProductLoading from "../../../components/productLoading/ProductLoading";
 import { useGetProductsQuery } from "../../../context/api/productApi";
-
+/**
+ * NewArrivals component
+ * 
+ * @param {object} props - Component props
+ * @returns {React.ReactElement} The NewArrivals component
+ */
 const NewArrivals = () => {
   const { data, isLoading } = useGetProductsQuery({ page: 4, limit: 10 });
 

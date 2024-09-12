@@ -1,3 +1,12 @@
+/**
+ * ShoppingCart component
+ *
+ * This component renders a shopping cart with a list of items, subtotal, total, and shipping options.
+ * It also includes a coupon input field and applies a discount if the coupon code is valid.
+ *
+ * @returns {JSX.Element} The shopping cart component
+ */
+
 import "./ShoppingCart.scss";
 
 import { NavLink, useNavigate } from "react-router-dom";
@@ -13,12 +22,25 @@ import { IoCloseOutline } from "react-icons/io5";
 import couponImg from "../../../assets/Cart/coupon.svg";
 
 const ShoppingCart = () => {
+  /**
+   * Scrolls to the top of the page when the component mounts
+   */
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
+  /**
+   * Retrieves the cart data from the Redux store
+   */
   const cartData = useSelector((state) => state.cart.value);
+  
+  /**
+   * Initializes the total price state to 0
+   */
   const [totalPrice, setTotalPrice] = useState(0);
   const [value, setValue] = useState("");
+  /**
+   * Initializes the coupon value state to 0
+   */
   const [coupon, setCoupon] = useState(0);
   console.log(cartData);
   const dispatch = useDispatch();
@@ -28,7 +50,9 @@ const ShoppingCart = () => {
     setTotalPrice(total);
   }, [cartData]);
   console.log(totalPrice);
-
+/**
+   * Initializes the shipping cost state to 0
+   */
   const [shipping, setShipping] = useState(0);
   const subtotal = totalPrice;
 

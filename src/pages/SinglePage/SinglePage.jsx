@@ -1,3 +1,13 @@
+/**
+ * SinglePage component
+ * 
+ * This component displays a single product page with details, images, ratings, and reviews.
+ * 
+ * @param {object} product - The product object retrieved from the API
+ * @param {boolean} isLoading - Whether the product data is still loading
+ * @returns {JSX.Element} The SinglePage component
+ */
+
 import "./SinglePage.scss";
 
 import {
@@ -24,6 +34,13 @@ const SinglePage = () => {
   const { data: product, isLoading } = useGetProductByIdQuery(Id);
   const [indexImage, setIndexImage] = useState(0);
   const [count, setCount] = useState(1);
+  /**
+   * getRating function
+   * 
+   * This function generates the rating stars based on the product rating
+   * 
+   * @returns {JSX.Element[]} An array of rating stars
+   */
   const getRating = () => {
     let res = [];
     for (let i = 0; i < Math.trunc(product?.rating); i++) {

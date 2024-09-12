@@ -1,3 +1,20 @@
+/**
+ * Footer component for the 3legant website.
+ *
+ * This component renders the footer section of the website, including navigation links, social media icons, and copyright information.
+ *
+ * @example
+ * ```jsx
+ * import React from 'react';
+ * import ReactDOM from 'react-dom';
+ * import Footer from './Footer';
+ *
+ * ReactDOM.render(<Footer />, document.getElementById('root'));
+ * ```
+ *
+ * @returns {React.ReactElement} The Footer component.
+ */
+
 import "./Footer.scss";
 
 import { LuFacebook, LuInstagram } from "react-icons/lu";

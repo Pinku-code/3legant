@@ -1,3 +1,15 @@
+/**
+ * DeleteCategory component
+ *
+ * A React component that handles deleting a category.
+ *
+ * @param {Object} props - Component props
+ * @param {number} props.deleteCategoryById.id - The ID of the category to delete
+ * @param {Function} props.setDeleteCategoryById - A function to set the delete category ID
+ *
+ * @returns {React.ReactElement} The DeleteCategory component
+ */
+
 import "./DeleteCategory.scss";
 
 import React, { useEffect } from "react";
@@ -6,9 +18,16 @@ import { toast } from "react-toastify";
 import { useDeleteCategoryMutation } from "../../../../context/api/categoryApi";
 
 const DeleteCategory = ({ deleteCategoryById, setDeleteCategoryById }) => {
+  /**
+   * Use the `useDeleteCategoryMutation` hook to get the `deleteCategory` function and its status
+   *
+   * @type {Array} [deleteCategory, { isLoading, isSuccess }]
+   */
   const [deleteCategory, { isLoading, isSuccess }] =
     useDeleteCategoryMutation();
-
+/**
+   * Handle deleting a category by ID
+   */
   const handleDeleteCategoryById = () => {
     deleteCategory(deleteCategoryById.id);
   };

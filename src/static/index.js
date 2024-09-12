@@ -1,3 +1,26 @@
+/**
+ * HomeAboutData: An array of objects containing data for the home about section.
+ *
+ * Each object represents a single item in the about section, with the following properties:
+ * - id: A unique identifier for the item.
+ * - title: The title of the item.
+ * - desc: A brief description of the item.
+ * - img: The image associated with the item.
+ *
+ * Example:
+ * ```javascript
+ * const homeAboutData = [
+ *   {
+ *     id: 1,
+ *     title: "Free Shipping",
+ *     desc: "Order above INR 200",
+ *     img: AboutImg1,
+ *   },
+ *   ...
+ * ];
+ * ```
+ */
+
 import AboutImg1 from "../assets/home/a1.svg";
 import AboutImg2 from "../assets/home/a2.svg";
 import AboutImg3 from "../assets/home/a3.svg";
@@ -43,6 +66,29 @@ export const HomeAboutData = [
     img: AboutImg4,
   },
 ];
+
+/**
+ * SingleComments: An array of objects containing data for single comments.
+ *
+ * Each object represents a single comment, with the following properties:
+ * - id: A unique identifier for the comment.
+ * - title: The title of the comment (i.e. the person's name).
+ * - desc: The text of the comment.
+ * - img: The image associated with the comment.
+ *
+ * Example:
+ * ```javascript
+ * const singleComments = [
+ *   {
+ *     id: 1,
+ *     title: "Sofia Harvetz",
+ *     desc: "I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it.",
+ *     img: SingleImg1,
+ *   },
+ *   ...
+ * ];
+ * ```
+ */
 
 export const SingleComments = [
   {

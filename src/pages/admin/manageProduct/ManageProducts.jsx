@@ -1,3 +1,11 @@
+/**
+ * ManageProducts component
+ *
+ * This component displays a list of products with pagination, edit, and delete functionality.
+ *
+ * @returns {JSX.Element} The ManageProducts component
+ */
+
 import "./ManageProduct.scss";
 
 import { FaRegStar, FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
@@ -14,6 +22,9 @@ import Stack from "@mui/material/Stack";
 import { useGetProductsQuery } from "../../../context/api/productApi";
 
 const ManageProducts = () => {
+   /**
+   * State variables
+   */
   const [page, setPage] = useState(1);
   const { data: length } = useGetProductsQuery();
   const { data } = useGetProductsQuery({ page, limit: 8 });
@@ -21,6 +32,12 @@ const ManageProducts = () => {
   const [deleteProduct, setDeleteProduct] = useState(null);
   const [editProduct, setEditProduct] = useState(null);
   console.log(data);
+  /**
+   * Handle pagination change
+   *
+   * @param {object} event - Pagination change event
+   * @param {number} value - New page number
+   */
   const handleChange = (event, value) => {
     setPage(value);
   };

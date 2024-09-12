@@ -1,3 +1,11 @@
+/**
+ * The main App component that renders the entire application.
+ *
+ * This component uses React Router to define routes for the application.
+ * It also imports and renders the ToastContainer from react-toastify.
+ *
+ * @returns {JSX.Element} The App component.
+ */
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -25,6 +33,13 @@ import ShoppingCart from "./pages/Cart/ShoppingCart/ShoppingCart";
 import SinglePage from "./pages/SinglePage/SinglePage";
 import { ToastContainer } from "react-toastify";
 
+/**
+ * The App function component.
+ *
+ * This component returns a Fragment that contains the Routes and ToastContainer.
+ *
+ * @returns {JSX.Element} The App component.
+ */
 function App() {
   return (
     <Fragment>
