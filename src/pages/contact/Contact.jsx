@@ -8,6 +8,7 @@ import Cimg2 from "../../assets/Cart/cc2.svg";
 import Cimg3 from "../../assets/Cart/cc3.svg";
 import ContactImg from "../../assets/Cart/contact_a.jpg";
 import { FaArrowRight } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 const Contact = () => {
   useEffect(() => {
@@ -59,13 +60,13 @@ const Contact = () => {
           <div className="contact__about__desc">
             <h2>About Us</h2>
             <p>
-              3legant is a gift & decorations store based in HCMC, Vietnam. Est
+              3legant is a gift & decorations store based in HCMC, India. Est
               since 2019. Our customer service is always prepared to support you
               24/7
             </p>
-            <button>
+            <NavLink to={"/shop"}>
               Shop Now <FaArrowRight />
-            </button>
+            </NavLink>
           </div>
         </div>
         <div className="contact__contact__us">
@@ -74,7 +75,7 @@ const Contact = () => {
             <div className="contact__contact__us__cards__card">
               <img src={Cimg1} alt="c.img" />
               <span>Address</span>
-              <p>Delhi</p>
+              <p>India</p>
             </div>
             <div className="contact__contact__us__cards__card">
               <img src={Cimg2} alt="c.img" />
@@ -125,7 +126,7 @@ const Contact = () => {
           </form>
           <iframe
             className="contact__main__map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.5886028300774!2d69.20426312067232!3d41.284140041522306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8ba578f4f58d%3A0xd7a2ecf23413b7a0!2sNajot%20Ta&#39;lim%20Chilonzor%20Filial!5e0!3m2!1sen!2s!4v1722005436549!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448194.82162352453!2d77.09323125!3d28.6440836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1726157745587!5m2!1sen!2sin"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
