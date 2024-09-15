@@ -2,6 +2,8 @@
 
 This is a full-stack e-commerce application built with Node.js, Express, MongoDB, React.js, and Redux. The project demonstrates user authentication, product listing, and shopping cart functionality. Admins can add, update, or delete products, while users can view, search, and manage their shopping carts.
 
+## Deployed Site : https://3legant-two.vercel.app/
+
 ## Features
   
 - **Authentication**: Login, register, and logout functionality.
