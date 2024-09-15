@@ -40,7 +40,7 @@ const AdminSidebar = () => {
     <Fragment>
       <div className="admin__sidebar">
         <h2 className="admin__sidebar__logo">
-          <NavLink to={"/"}><img src={leftImg} alt="left.svg" />
+          <NavLink to={"/login"}><img src={leftImg} alt="left.svg" />
           Admin Dashboard
           </NavLink>
         </h2>

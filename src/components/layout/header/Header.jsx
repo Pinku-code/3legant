@@ -111,7 +111,7 @@ const Header = () => {
                     {search ? <IoCloseOutline /> : <LuSearch />}
                   </button>
                 </NavLink> 
-                <NavLink to={"admin/create-product"}>
+                <NavLink to={"/login"}>
                   <IoPersonCircleOutline />
                 </NavLink>
                 <NavLink className="header__nav" to={"cart/shoppingCart"}>
