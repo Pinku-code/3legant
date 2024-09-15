@@ -56,8 +56,8 @@ This is a full-stack e-commerce application built with Node.js, Express, MongoDB
 Development Server :  http://localhost:5173/
 
 ### Login Credentials For Admin
-Username : Abinash
-Password : 123456789
+- Username : Abinash
+- Password : 123456789
 
 ### Future Enhancements
 - Implement order management.
